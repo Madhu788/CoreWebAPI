@@ -1,0 +1,22 @@
+//Create Customer JSON 
+{
+    "userID": "2fa85f64-5717-4562-b3fc-2c963f66afa0",
+    "userName": "MadhuAbe",
+    "email": "MadhuAbe@gmail.com",
+    "firstName": "Madhu",
+    "lastName": "Abekoon",
+    "createdOn": "2023-07-08T12:48:40",
+    "isActive": true
+  }
+
+//Update Customer JSON
+{
+    "userID": "2fa85f64-5717-4562-b3fc-2c963f66afa0",
+    "userName": "MadhuAbekoon",
+    "email": "MadhuAbe@gmail.com",
+    "firstName": "Madhubhashini",
+    "lastName": "Abekoon",
+    "createdOn": "2023-07-08T12:48:40",
+    "isActive": true
+  }
+  
