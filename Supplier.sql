@@ -27,9 +27,8 @@ ALTER TABLE [dbo].[Supplier] ADD  CONSTRAINT [DF_CreatedOnSuplier]  DEFAULT (get
 GO
 
 
-GRANT SHOWPLAN TO 'Madhubhashini.Abekoon'
-GO
---Insert Data
+
+--Insert [Supplier] Data
 USE [POC]
 GO
 

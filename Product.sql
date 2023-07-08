@@ -33,9 +33,9 @@ GO
 ALTER TABLE [dbo].[Product] ADD  CONSTRAINT [DF_CreatedOnProduct]  DEFAULT (getdate()) FOR [CreatedOn]
 GO
 
-USE [UMBRACOPOC]
+--Insert [Product] Data
+USE [POC]
 GO
-
 INSERT INTO [dbo].[Product]
            ([ProductName]
            ,[UnitPrice]
@@ -65,4 +65,4 @@ INSERT INTO [dbo].[Product]
 GO
 
 
-SELECT * FROM [dbo].[Product]
+--SELECT * FROM [dbo].[Product]

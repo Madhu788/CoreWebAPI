@@ -38,6 +38,9 @@ GO
 ALTER TABLE [dbo].[Order] ADD  CONSTRAINT [DF_ShippedOn]  DEFAULT (getdate()) FOR [ShippedOn]
 GO
 
+--Insert [Order] Data
+USE [POC]
+GO
 INSERT INTO [dbo].[Order]
            ([ProductId]
            ,[OrderStatus]
@@ -64,7 +67,7 @@ INSERT INTO [dbo].[Order]
            ,1
            ,1
            ,'3FA85F64-5717-4562-B3FC-2C963F66AFA6'      
-           ,0)
+           ,1)
 		   ,('F441564F-49A3-4961-AB73-E8B6A6162C0A'
            ,1
            ,1
@@ -74,18 +77,15 @@ GO
 
 --SELECT * FROM [dbo].[Order] 
 
-
---SELECT o.* , c.[Username], p.[ProductName], s.[SupplierName]
---FROM [dbo].[Order] o, [dbo].[Customer] c, [dbo].Supplier s, [dbo].Product p
---WHERE o.IsActive = 1 AND o.[OrderBy] = c.[UserId] AND o.[ProductId] = p.[ProductId]
---AND p.[SupplierId] = s.[SupplierId]
-
-
-ALTER PROCEDURE GetActiveOrders
+--Create Stored procedure for 6.E to get required data from SQL.
+CREATE PROCEDURE GetActiveOrders
 @Active bit
 AS BEGIN
 SELECT o.* , c.[Username], p.[ProductName], s.[SupplierName]
 FROM [dbo].[Order] o, [dbo].[Customer] c, [dbo].Supplier s, [dbo].Product p
 WHERE o.IsActive = @Active AND o.[OrderBy] = c.[UserId] AND o.[ProductId] = p.[ProductId]
 AND p.[SupplierId] = s.[SupplierId]
+order by c.[Username]
 END
+
+--EXEC GetActiveOrders @Active = 1;
